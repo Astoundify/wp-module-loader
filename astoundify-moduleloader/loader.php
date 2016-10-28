@@ -134,7 +134,6 @@ class Astoundify_ModuleLoader_Loader {
 	 */
 	public function create_instance( $module_class ) {
 		$module_class = str_replace( '/', '_', $module_class );
-		$module_class = apply_filters( 'astoundify_moduleloader_autoload_prefix', 'Astoundify_' ) . $module_class;
 
 		return new $module_class;
 	}
