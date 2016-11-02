@@ -121,7 +121,7 @@ class Astoundify_ModuleLoader_Loader {
 	 * @return bool
 	 */
 	public function has_module_instance( $module_name ) {
-		return $this->has_module( $module_name ) && $this->modules[ $module_name ] instanceof Astoundify_ModuleLoader_Module;
+		return $this->has_module( $module_name );
 	}
 
 	/**
