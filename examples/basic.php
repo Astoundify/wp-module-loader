@@ -20,14 +20,15 @@ require_once( dirname( dirname( __FILE__ ) ) . '/astoundify-moduleloader/astound
  *
  * @param string $class
  */
-function astoundify_plugininstaller_moduleloader( $class ) {
+function astoundify_moduleloader( $class ) {
 	$prefix = 'Your_Plugin_';
 	$base_dir = dirname( __FILE__ );
 	
 	astoundify_moduleloader_autoload( $class, $prefix, $base_dir );
 }
-spl_autoload_register( 'astoundify_plugininstaller_moduleloader' );
+spl_autoload_register( 'astoundify_moduleloader' );
 
-
-// autoload a class and load its modules
-new Your_Plugin_Test();
+// autoload a class and access its modules
+$test = new Your_Plugin_Test();
+$foo = $test->foo();
+$foo->hello();

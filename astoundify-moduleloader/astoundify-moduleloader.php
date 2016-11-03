@@ -1,4 +1,5 @@
 <?php
+if ( ! function_exists( 'astoundify_moduleloader_autoload_internal' ) ) :
 /**
  * Autoloader for built in modules
  *
@@ -33,8 +34,10 @@ function astoundify_moduleloader_autoload_internal( $class ) {
 		require_once $file;
 	}
 }
+endif;
 spl_autoload_register( 'astoundify_moduleloader_autoload_internal' );
 
+if ( ! function_exists( 'astoundify_moduleloader_autoload' ) ) :
 /**
  * Internals for a secondary autoloader for external modules.
  *
@@ -61,3 +64,4 @@ function astoundify_moduleloader_autoload( $class, $prefix, $base_dir ) {
 		require_once $file;
 	}
 }
+endif;

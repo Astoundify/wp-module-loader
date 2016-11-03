@@ -10,7 +10,7 @@ class Your_Plugin_Test extends Astoundify_ModuleLoader_Module {
 	 * @access protected
 	 */
 	protected $modules = array(
-		'foo' => 'foo/manager',
+		'foo' => 'Your_Plugin_Foo_Manager'
 	);
 
 	/**

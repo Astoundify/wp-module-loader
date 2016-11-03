@@ -7,12 +7,12 @@
 class Your_Plugin_Foo_Manager {
 
 	/**
-	 * Print a message.
+	 * Print another message
 	 *
 	 * @since 1.0.0
 	 */
-	public function __construct() {
-		print_r( $this );
+	public function hello() {
+		print_r( 'Hello' );
 	}
 
 }

@@ -11,4 +11,4 @@
 /**
  * See the `/examples` directory.
  */
-// require_once( dirname( __FILE__ ) . '/examples/basic.php' );
+require_once( dirname( __FILE__ ) . '/examples/basic.php' );
