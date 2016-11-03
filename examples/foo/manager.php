@@ -4,7 +4,7 @@
  *
  * @since 1.0.0
  */
-class Astoundify_Foo_Manager {
+class Your_Plugin_Foo_Manager {
 
 	/**
 	 * Print a message.

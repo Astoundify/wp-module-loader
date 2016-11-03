@@ -1,6 +1,6 @@
 <?php
 /**
- * Autoloader for Modules
+ * Autoloader for built in modules
  *
  * Based on an example implementation of PSR-4, but compatible with PHP 5.2.
  *
@@ -14,7 +14,7 @@
  *
  * @param string $class
  */
-function astoundify_moduleloader_autoload( $class ) {
+function astoundify_moduleloader_autoload_internal( $class ) {
 	// Prefix for all classes that are loaded
 	$prefix = 'Astoundify_ModuleLoader_';
 	$length = strlen( $prefix );
@@ -33,4 +33,31 @@ function astoundify_moduleloader_autoload( $class ) {
 		require_once $file;
 	}
 }
-spl_autoload_register( 'astoundify_moduleloader_autoload' );
+spl_autoload_register( 'astoundify_moduleloader_autoload_internal' );
+
+/**
+ * Internals for a secondary autoloader for external modules.
+ *
+ * @since 1.0.0
+ *
+ * @param string $class
+ */
+function astoundify_moduleloader_autoload( $class, $prefix, $base_dir ) {
+	// Prefix for all classes that are loaded
+	$prefix = $prefix;
+	$length = strlen( $prefix );
+
+	// Does the current class have the set prefix?
+	if ( 0 !== strncasecmp( $prefix, $class, $length ) ) {
+		return;
+	}
+	
+	$base_dir = $base_dir;
+	$relative_class = strtolower( substr( $class, $length ) );
+	$file = trailingslashit( $base_dir ) . str_replace( '_', '/', $relative_class ) . '.php';
+
+	// Load the file if it exists and is readable
+	if ( is_readable( $file ) ) {
+		require_once $file;
+	}
+}

@@ -6,22 +6,28 @@
  */
 
 /**
- * Filter the directory classes are looked for in.
- *
- * @since 1.0.0
- *
- * @param string $dir
- * @return string
- */
-function astoundify_moduleloader_autoload_directory( $dir ) {
-	return dirname( __FILE__ );
-}
-add_filter( 'astoundify_moduleloader_autoload_directory', 'astoundify_moduleloader_autoload_directory' );
-
-/**
  * Load the library
  */
 require_once( dirname( dirname( __FILE__ ) ) . '/astoundify-moduleloader/astoundify-moduleloader.php' );
 
+/**
+ * Autoloader for Modules
+ *
+ * Autload all classes starting with `Your_Plugin_` and start
+ * looking from the current directory down.
+ *
+ * @since 1.0.0
+ *
+ * @param string $class
+ */
+function astoundify_plugininstaller_moduleloader( $class ) {
+	$prefix = 'Your_Plugin_';
+	$base_dir = dirname( __FILE__ );
+	
+	astoundify_moduleloader_autoload( $class, $prefix, $base_dir );
+}
+spl_autoload_register( 'astoundify_plugininstaller_moduleloader' );
+
+
 // autoload a class and load its modules
-new Astoundify_Test();
+new Your_Plugin_Test();

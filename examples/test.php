@@ -2,7 +2,7 @@
 /**
  *
  */
-class Astoundify_Test extends Astoundify_ModuleLoader_Module {
+class Your_Plugin_Test extends Astoundify_ModuleLoader_Module {
 
 	/**
 	 * @since 1.0.0
