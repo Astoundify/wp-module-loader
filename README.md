@@ -8,15 +8,15 @@ Manually requiring a ton of files is the worst.
 
 ## Usage
 
-See all information in [../blob/master/examples](../blob/master/examples)
+See all information in [../master/examples](../master/examples)
 
 ### PHP 5.2
 
-[../blob/master/examples/example-1/example-1.php](../blob/master/examples/example-1/example-1.php)
+[../master/examples/example-1/example-1.php](../master/examples/example-1/example-1.php)
 
 ### PHP 5.3+
 
-[../blob/master/examples/example-2/example-2.php](../blob/master/examples/example-2/example-2.php)
+[../master/examples/example-2/example-2.php](../master/examples/example-2/example-2.php)
 
 ### Defining Submodules
 
