@@ -28,7 +28,8 @@ class Your_Plugin_Test extends Astoundify_ModuleLoader_Module {
 	 * @access protected
 	 */
 	protected $modules = array(
-		'foo' => 'Your_Plugin_Foo_Manager'
+		'foo' => 'Your_Plugin_Foo_Manager', // PHP 5.2
+		'bar' => 'Your\Plugin\Bar\Manager', // PHP 5.3
 	);
 }
 ```
@@ -129,7 +130,7 @@ To use the `load` method the class must be an instance of `Astoundify_ModuleLoad
 
 ## Development
 
-### Test
+### Testing
 
 https://make.wordpress.org/core/handbook/testing/automated-testing/phpunit/
 
@@ -141,6 +142,6 @@ $ phpunit
 
 ### 1.0.0
 
-**November, 2016**
+**November 4, 2016**
 
-- Initial release.
+New: Initial release.
