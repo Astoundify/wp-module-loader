@@ -12,4 +12,4 @@
  * See the `/examples` directory.
  */
 // require_once( dirname( __FILE__ ) . '/examples/example-1/example-1.php' );
-require_once( dirname( __FILE__ ) . '/examples/example-2/example-2.php' );
+// require_once( dirname( __FILE__ ) . '/examples/example-2/example-2.php' );
