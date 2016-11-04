@@ -20,7 +20,7 @@ require_once( dirname( __FILE__ ) . '/../../astoundify-moduleloader/astoundify-m
  *
  * @param string $class
  */
-function astoundify_moduleloader( $class ) {
+function astoundify_moduleloader_example_1( $class ) {
 	// The PHP 5.2 "namespace" all classes will include.
 	$prefix = 'Your_Plugin_';
 
@@ -30,7 +30,7 @@ function astoundify_moduleloader( $class ) {
 	// Include the autoloader
 	astoundify_moduleloader_autoload( $class, $prefix, $base_dir );
 }
-spl_autoload_register( 'astoundify_moduleloader' );
+spl_autoload_register( 'astoundify_moduleloader_example_1' );
 
 /**
  * Use Classes

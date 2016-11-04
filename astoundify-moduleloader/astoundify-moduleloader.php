@@ -57,7 +57,14 @@ function astoundify_moduleloader_autoload( $class, $prefix, $base_dir ) {
 	
 	$base_dir = $base_dir;
 	$relative_class = strtolower( substr( $class, $length ) );
-	$file = trailingslashit( $base_dir ) . str_replace( array( '\\', '_' ), '/', $relative_class ) . '.php';
+
+	// convert PHP real or fake namespaced classes
+	//
+	// My_Class -> my/class.php
+	// My/Class -> my/class.php
+	$relative_file = str_replace( array( '\\', '_' ), '/', $relative_class ) . '.php';
+
+	$file = trailingslashit( $base_dir ) . $relative_file;
 
 	// Load the file if it exists and is readable
 	if ( is_readable( $file ) ) {

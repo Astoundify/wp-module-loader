@@ -22,7 +22,7 @@ require_once( dirname( __FILE__ ) . '/../../astoundify-moduleloader/astoundify-m
  *
  * @param string $class
  */
-function astoundify_moduleloader( $class ) {
+function astoundify_moduleloader_example_2( $class ) {
 	// The namespace for your project
 	$prefix = 'Your\Plugin\\';
 
@@ -32,7 +32,7 @@ function astoundify_moduleloader( $class ) {
 	// Include the autoloader
 	astoundify_moduleloader_autoload( $class, $prefix, $base_dir );
 }
-spl_autoload_register( 'astoundify_moduleloader' );
+spl_autoload_register( 'astoundify_moduleloader_example_2' );
 
 /**
  * Load namespaced app
