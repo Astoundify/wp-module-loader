@@ -5,15 +5,10 @@ if ( ! function_exists( 'astoundify_moduleloader_autoload_internal' ) ) :
  *
  * Based on an example implementation of PSR-4, but compatible with PHP 5.2.
  *
- * Calling `new Astoundify_Theme_Assets()` will automatically load `/inc/theme/assets.php`
- *
- * @see Filter: `astoundify_moduleloader_autoload_prefix`
- * @see Filter: `astoundify_moduleloader_autoload_directory`
+ * @since 1.0.0
  * @link http://www.php-fig.org/psr/psr-4/examples/
  *
- * @since 1.0.0
- *
- * @param string $class
+ * @param string $class The name of the class to be autoloaded
  */
 function astoundify_moduleloader_autoload_internal( $class ) {
 	// Prefix for all classes that are loaded
@@ -43,7 +38,9 @@ if ( ! function_exists( 'astoundify_moduleloader_autoload' ) ) :
  *
  * @since 1.0.0
  *
- * @param string $class
+ * @param string $class The name of the class to be autoloaded
+ * @param string $prefix The prefix or namespace of all classes
+ * @param string $base_dir The starting point to look for files
  */
 function astoundify_moduleloader_autoload( $class, $prefix, $base_dir ) {
 	// Prefix for all classes that are loaded
