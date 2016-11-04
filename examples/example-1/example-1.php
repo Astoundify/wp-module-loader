@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic example.
+ * Basic example. PHP 5.2 compatible.
  *
  * @since 1.0.0
  */
@@ -8,7 +8,7 @@
 /**
  * Load the library
  */
-require_once( dirname( dirname( __FILE__ ) ) . '/astoundify-moduleloader/astoundify-moduleloader.php' );
+require_once( dirname( __FILE__ ) . '/../../astoundify-moduleloader/astoundify-moduleloader.php' );
 
 /**
  * Autoloader for Modules
@@ -21,14 +21,26 @@ require_once( dirname( dirname( __FILE__ ) ) . '/astoundify-moduleloader/astound
  * @param string $class
  */
 function astoundify_moduleloader( $class ) {
+	// The PHP 5.2 "namespace" all classes will include.
 	$prefix = 'Your_Plugin_';
+
+	// Where to start searching for files.
 	$base_dir = dirname( __FILE__ );
 	
+	// Include the autoloader
 	astoundify_moduleloader_autoload( $class, $prefix, $base_dir );
 }
 spl_autoload_register( 'astoundify_moduleloader' );
 
-// autoload a class and access its modules
+/**
+ * Use Classes
+ */
+
+// autoloads file test.php
 $test = new Your_Plugin_Test();
+
+// acesss the `foo` submodule of `Your_Plugin_Test`
 $foo = $test->foo();
+
+// call public method of `foo`
 $foo->hello();

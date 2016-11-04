@@ -12,7 +12,7 @@ class Your_Plugin_Foo_Manager {
 	 * @since 1.0.0
 	 */
 	public function hello() {
-		print_r( 'Hello' );
+		var_dump( 'Hello' );
 	}
 
 }

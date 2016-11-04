@@ -57,7 +57,7 @@ function astoundify_moduleloader_autoload( $class, $prefix, $base_dir ) {
 	
 	$base_dir = $base_dir;
 	$relative_class = strtolower( substr( $class, $length ) );
-	$file = trailingslashit( $base_dir ) . str_replace( '_', '/', $relative_class ) . '.php';
+	$file = trailingslashit( $base_dir ) . str_replace( array( '\\', '_' ), '/', $relative_class ) . '.php';
 
 	// Load the file if it exists and is readable
 	if ( is_readable( $file ) ) {
