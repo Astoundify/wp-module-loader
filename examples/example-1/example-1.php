@@ -8,7 +8,7 @@
 /**
  * Load the library
  */
-require_once( dirname( __FILE__ ) . '/../../astoundify-moduleloader/astoundify-moduleloader.php' );
+require_once( dirname( __FILE__ ) . '/../../astoundify-moduleloader.php' );
 
 /**
  * Autoloader for Modules
