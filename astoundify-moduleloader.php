@@ -29,7 +29,7 @@ function astoundify_moduleloader_autoload_internal( $class ) {
 		return;
 	}
 	
-	$base_dir = dirname( __FILE__ );
+	$base_dir = dirname( __FILE__ ) . '/app';
 	$relative_class = strtolower( substr( $class, $length ) );
 	$file = trailingslashit( $base_dir ) . str_replace( '_', '/', $relative_class ) . '.php';
 
